@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-	<style>
+    <style>
 		/* The Modal (background) */
 		.modal {
 			display: none; /* Hidden by default */
@@ -16,7 +16,6 @@
 			background-color: rgb(0,0,0); /* Fallback color */
 			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 		}
-
 		/* Modal Content */
 		.modal-content {
 			position: relative;
@@ -34,18 +33,15 @@
 			animation-name: animatetop;
 			animation-duration: 0.4s
 		}
-
 		/* Add Animation */
 		@-webkit-keyframes animatetop {
 			from {top:-300px; opacity:0}
 			to {top:0; opacity:1}
 		}
-
 		@keyframes animatetop {
 			from {top:-300px; opacity:0}
 			to {top:0; opacity:1}
 		}
-
 		/* The Close Button */
 		.close {
 			color: white;
@@ -53,27 +49,50 @@
 			font-size: 28px;
 			font-weight: bold;
 		}
-
 		.close:hover,
 		.close:focus {
 			color: #000;
 			text-decoration: none;
 			cursor: pointer;
 		}
-
 		.modal-header {
 			padding: 2px 16px;
-			background-color: grey;
-			color: blue;
+			background-color: royalblue;
+			color: white;
 		}
-
 		.modal-body {padding: 2px 16px;}
-
 		.modal-footer {
 			padding: 2px 16px;
 			background-color: grey;
 			color: blue;
 		}
+        button.btn {
+	       height: 50px;
+            cursor: pointer;
+            margin: 0;
+            padding: 0 20px;
+            vertical-align: middle;
+            background: #4aaf51;
+            border: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #fff;
+            -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+            text-shadow: none;
+            -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+            -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s;             transition: all .3s;
+        }
+
+        button.btn:hover { opacity: 0.6; color: #fff; }
+
+        button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none;                             box-shadow: none; }
+
+        button.btn:focus { outline: 0; opacity: 0.6; background: #4aaf51; color: #fff; }
+
+        button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #4aaf51; color:                                                                #fff; }
+
 	</style>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,19 +112,21 @@
 	<link rel="stylesheet" type="text/css" href="css/flickity.css" />
 	<!-- Component styles -->
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
+    
 	<script src="js/modernizr.custom.js"></script>
 </head>
+    
 <body>
 	<!-- Bottom bar with filter and cart info -->
 	<div class="bar">
 		<div class="filter">
 			<span class="filter__label">Filter: </span>
 			<button class="action filter__item filter__item--selected" data-filter="*">All</button>
-			<button class="action filter__item" data-filter=".jackets"><i class="icon icon--jacket"></i><span class="action__text">Jackets</span></button>
-			<button class="action filter__item" data-filter=".shirts"><i class="icon icon--shirt"></i><span class="action__text">Shirts</span></button>
-			<button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">Dresses</span></button>
-			<button class="action filter__item" data-filter=".trousers"><i class="icon icon--trousers"></i><span class="action__text">Trousers</span></button>
-			<button class="action filter__item" data-filter=".shoes"><i class="icon icon--shoe"></i><span class="action__text">Shoes</span></button>
+			<button class="action filter__item" data-filter=".jackets"><i class="icon icon--jacket"></i><span class="action__text">Food Item 1</span></button>
+			<button class="action filter__item" data-filter=".shirts"><i class="icon icon--shirt"></i><span class="action__text">Food Item 2</span></button>
+			<button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">Food Item 3</span></button>
+			<button class="action filter__item" data-filter=".trousers"><i class="icon icon--trousers"></i><span class="action__text">Food Item 4</span></button>
+			<button class="action filter__item" data-filter=".shoes"><i class="icon icon--shoe"></i><span class="action__text">Food Item 5</span></button>
 		</div>
 		<button class="cart" id="myBtn">
 			<i class="cart__icon fa fa-shopping-cart"></i>
@@ -128,13 +149,13 @@
 			<!-- Grid items -->
 			<div class="grid__item shirts">
 				<div class="slider">
-					<div class="slider__item"><img src="images/bg2.jpg" alt="Dummy" /></div>
-					<div class="slider__item"><img src="images/bg2.jpg" alt="Dummy" /></div>
-					<div class="slider__item"><img src="images/bg2.jpg" alt="Dummy" /></div>
+					<div class="slider__item"><img src="images/dress.png" alt="Dummy" /></div>
+					<div class="slider__item"><img src="images/dress.png" alt="Dummy" /></div>
+					<div class="slider__item"><img src="images/dress.png" alt="Dummy" /></div>
 				</div>
 				<div class="meta">
-					<h3 class="meta__title">Thali</h3>
-					<span class="meta__brand">Mohani</span>
+					<h3 class="meta__title">Samosa</h3>
+					<span class="meta__brand">Nirma</span>
 					<span class="meta__price">$9</span>
 				</div>
 				<button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
@@ -460,7 +481,7 @@
 				<div class="meta">
 					<h3 class="meta__title">Dummy Product</h3>
 					<span class="meta__brand">Dummy Brand</span>
-					<span class="meta__price">$99</span>
+					<span class="meta__price">Rs. 99</span>
 				</div>
 				<button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
 			</div>
@@ -592,55 +613,59 @@
 					<span class="meta__brand">Dummy Brand</span>
 					<span class="meta__price">$99</span>
 				</div>
-				<button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
+				<button class="action action--button action--buy" ><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
 			</div>
 		</section>
 		<!-- /grid-->
 	</div>
 	<!-- /view -->
-
+    <script src="js/jquery.js"></script>
 	<script src="js/isotope.pkgd.min.js"></script>
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/main.js"></script>
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
+   
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
+                
 				<span class="close">×</span>
-				<h2>Modal Header</h2>
+				<h2>Confirm Items</h2>
 			</div>
 			<div class="modal-body">
-				<div></div>
-			</div>
-			<div class="modal-footer">
-				<h3>Modal Footer</h3>
+				<div>
+                    <div id="confItems">
+                    
+                        
+                    
+                    </div>
+                    <form class="form-1" action="#">
+                        
+                        <Button class="btn" type="submit">Submit</Button>
+                    </form>
+                </div>
 			</div>
 		</div>
 
 	</div>
-
-	<script>
+    
+    <script>
 		// Get the modal
 		var modal = document.getElementById('myModal');
-
 		// Get the button that opens the modal
 		var btn = document.getElementById("myBtn");
-
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
-
 		// When the user clicks the button, open the modal
 		btn.onclick = function() {
 			modal.style.display = "block";
 		}
-
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
 			modal.style.display = "none";
 		}
-
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
@@ -648,5 +673,6 @@
 			}
 		}
 	</script>
+
 </body>
 </html>

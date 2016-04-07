@@ -4,16 +4,13 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-
-
 ;(function(window) {
 
 	'use strict';
-
 	var support = { animations : Modernizr.cssanimations },
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
@@ -97,7 +94,6 @@
 			transitionDuration: '0.6s'
 		});
 	}
-
 	function initEvents() {
 		filterCtrls.forEach(function(filterCtrl) {
 			filterCtrl.addEventListener('click', function() {
@@ -117,20 +113,59 @@
 			iso.layout();
 		}, 50));
 
+	cart.addEventListener('click',cart_clicked);
+
 		// add to cart
 		[].slice.call(grid.querySelectorAll('.grid__item')).forEach(function(item) {
+
 			item.querySelector('.action--buy').addEventListener('click', addToCart);
+			//item.querySelector('.action--buy').getAttribute('id'));
 		});
 	}
+		function getInfo(button){
 
-	function addToCart() {
+
+			//console.log(button);
+			var child = button.parentElement.childNodes[3].children;
+
+
+			var data ={};
+
+			var attributes = ["title","brand","price"];
+			for(var i=0;i<attributes.length;i++){
+				data[attributes[i]] = child[i].innerHTML;
+			}
+
+
+
+			return data;
+
+
+
+		}
+
+		function addToCart(evt) {
+
+
+			var data = getInfo($(evt.target).closest("button")[0]);
+			console.log(data);
+			console.log(data['price']);
+			console.log(typeof(data['price']));
+			var div1 = document.createElement("div");
+			div1.innerHTML = data['title']+"<br>"+data['price']+"<hr>";
+			document.getElementById('confItems').appendChild(div1);
+
 		classie.add(cart, 'cart--animate');
 		setTimeout(function() {cartItems.innerHTML = Number(cartItems.innerHTML) + 1;}, 200);
 		onEndAnimation(cartItems, function() {
 			classie.remove(cart, 'cart--animate');
 		});
 	}
+	function cart_clicked(){
 
+		//	window.alert("cart_clicked");
+		
+	}
 	function recalcFlickities() {
 		for(var i = 0, len = flkties.length; i < len; ++i) {
 			flkties[i].resize();
