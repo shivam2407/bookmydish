@@ -152,8 +152,11 @@
 			console.log(data['price']);
 			console.log(typeof(data['price']));
 			var div1 = document.createElement("div");
-			div1.innerHTML = data['title']+"<br>"+data['price']+"<hr>";
-			document.getElementById('confItems').appendChild(div1);
+			var div2 = document.createElement("div");
+			div1.innerHTML = data['title'];
+			document.getElementById('confItems1').appendChild(div1);
+			div2.innerHTML = data['price'];
+			document.getElementById('confItems2').appendChild(div2);
 
 		classie.add(cart, 'cart--animate');
 		setTimeout(function() {cartItems.innerHTML = Number(cartItems.innerHTML) + 1;}, 200);
