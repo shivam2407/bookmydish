@@ -11,6 +11,7 @@
 ;(function(window) {
 
 	'use strict';
+	var global_data=" ";
 	var support = { animations : Modernizr.cssanimations },
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
@@ -29,6 +30,7 @@
 				onEndCallbackFn();
 			}
 		};
+
 
 	// from http://www.sberry.me/articles/javascript-event-throttling-debouncing
 	function throttle(fn, delay) {
@@ -57,6 +59,7 @@
 		cart = document.querySelector('.cart'),
 		cartItems = cart.querySelector('.cart__count');
 
+	
 	function init() {
 		// preload images
 		imagesLoaded(grid, function() {
@@ -114,7 +117,6 @@
 		}, 50));
 
 	cart.addEventListener('click',cart_clicked);
-
 		// add to cart
 		[].slice.call(grid.querySelectorAll('.grid__item')).forEach(function(item) {
 
@@ -122,6 +124,7 @@
 			//item.querySelector('.action--buy').getAttribute('id'));
 		});
 	}
+
 		function getInfo(button){
 
 
@@ -157,6 +160,9 @@
 			document.getElementById('confItems1').appendChild(div1);
 			div2.innerHTML = data['price'];
 			document.getElementById('confItems2').appendChild(div2);
+			window.glob = window.glob+data['title']+"~";
+			window.glob = window.glob+data['price']+"|";
+			//console.log(global_data);
 
 		classie.add(cart, 'cart--animate');
 		setTimeout(function() {cartItems.innerHTML = Number(cartItems.innerHTML) + 1;}, 200);
@@ -164,16 +170,20 @@
 			classie.remove(cart, 'cart--animate');
 		});
 	}
+
+	
 	function cart_clicked(){
 
 		//	window.alert("cart_clicked");
 		
 	}
+
 	function recalcFlickities() {
 		for(var i = 0, len = flkties.length; i < len; ++i) {
 			flkties[i].resize();
 		}
 	}
+
 
 	init();
 
